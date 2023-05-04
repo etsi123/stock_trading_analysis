@@ -63,6 +63,8 @@ class stock_data:
         strategy_percent_increase = np.round(strategy_percent_increase,2)
         buy_and_hold_increase = np.round(((close_list[-1] - initial_price)/initial_price)*100,2)
         
-        print('For ticker ' + str(self.ticker) + ' and duration = ' + str(self.num_days) + ' days:')
-        print('My strat. yields a ' + str(strategy_percent_increase) + ' % increase. ')
-        print('Buy and hold yields a ' + str(buy_and_hold_increase) + str(' % increase')) 
+        # print('For ticker ' + str(self.ticker) + ' and duration = ' + str(self.num_days) + ' days:')
+        # print('My strat. yields a ' + str(strategy_percent_increase) + ' % increase. ')
+        # print('Buy and hold yields a ' + str(buy_and_hold_increase) + str(' % increase')) 
+
+        return [self.ticker,self.num_days,self.num_chunks,self.percent_cutoff,strategy_percent_increase,buy_and_hold_increase]

@@ -17,4 +17,4 @@ Risks:
 
 This strategy is based on the assumption that blue-chip stocks will not continuously decline without ever popping up. Generally speaking, stocks will drop but may also increase in value briefly as traders/investers attempt to "buy-the-dip". However, there is requirement guaranteeing this will happen: just what tends to happen to stocks in the market.
 
-Summary: More work to be done here, but this could be a profitable strategy!¶
+Summary: Analaysis incomplete, but preliminary results indicate that this can be a profitable strategy. Next steps: Simulate trading strategy for more blue-chip stocks, over varying periods of time, and compare with the "buy-and-hold" investment strategy. 

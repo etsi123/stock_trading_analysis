@@ -1,6 +1,6 @@
 # stock_trading_analysis
-
-Disclaimer: The author of this code/analysis assumes for those who risk their money trying this strategy. There is inherent risk to participating in the stock market despite this technical analysis. As a general rule, one should only trade/invest with money that one can afford to lose.
+**
+Disclaimer: The author of this code/analysis assumes for those who risk their money trying this strategy. There is inherent risk to participating in the stock market despite this technical analysis. As a general rule, one should only trade/invest with money that one can afford to lose.**
 
 
 **Premise: Average down on blue chip stocks and compare with the hold strategy. Code is meant to answer the following questions.**

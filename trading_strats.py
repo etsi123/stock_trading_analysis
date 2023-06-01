@@ -12,6 +12,9 @@ class stock_data:
         self.num_chunks = num_chunks
         self.percent_cutoff = percent_cutoff
     def get_stock_data(self): 
+        """
+        Retrieve the stock data for ticker over the specified date range. 
+        """
         today = date.today()
         d1 = today.strftime("%Y-%m-%d")
         end_date = d1
@@ -24,7 +27,7 @@ class stock_data:
         self.data = data
         return self.data
     def simulate_avg_down_strategy(self): 
-        total_investable_amount_og = 10000
+        total_investable_amount_og = 10000 #Compute a basis amount, everything normalized by this number. 
         total_investable_amount = total_investable_amount_og
         num_chunks = self.num_chunks
         dollar_chunks = total_investable_amount / num_chunks

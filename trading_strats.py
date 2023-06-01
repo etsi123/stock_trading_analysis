@@ -27,6 +27,9 @@ class stock_data:
         self.data = data
         return self.data
     def simulate_avg_down_strategy(self): 
+        """
+        Code to simulate my average down strategy. 
+        """
         total_investable_amount_og = 10000 #Compute a basis amount, everything normalized by this number. 
         total_investable_amount = total_investable_amount_og
         num_chunks = self.num_chunks
@@ -51,6 +54,7 @@ class stock_data:
                 num_stocks = initial_num_stocks
             #Market Closes    
             percent_change = percent_change_list[i]
+            #Sell at break even. 
             if percent_change < self.percent_cutoff and close_list[i] < avg_price and total_investable_amount >= total_investable_amount_og/num_chunks: 
                 purchase_price = close_list[i]
                 num_purchased_today = dollar_chunks / purchase_price
@@ -65,9 +69,10 @@ class stock_data:
         strategy_percent_increase = (total_investable_amount + num_stocks* close_list[-1] - total_investable_amount_og)*100/total_investable_amount_og
         strategy_percent_increase = np.round(strategy_percent_increase,2)
         buy_and_hold_increase = np.round(((close_list[-1] - initial_price)/initial_price)*100,2)
-        
-        # print('For ticker ' + str(self.ticker) + ' and duration = ' + str(self.num_days) + ' days:')
-        # print('My strat. yields a ' + str(strategy_percent_increase) + ' % increase. ')
-        # print('Buy and hold yields a ' + str(buy_and_hold_increase) + str(' % increase')) 
+
+        #Summarize results. 
+        print('For ticker ' + str(self.ticker) + ' and duration = ' + str(self.num_days) + ' days:')
+        print('My strat. yields a ' + str(strategy_percent_increase) + ' % increase. ')
+        print('Buy and hold yields a ' + str(buy_and_hold_increase) + str(' % increase')) 
 
         return [self.ticker,self.num_days,self.num_chunks,self.percent_cutoff,strategy_percent_increase,buy_and_hold_increase]

@@ -11,6 +11,7 @@ class stock_data:
         self.num_days = num_days
         self.num_chunks = num_chunks
         self.percent_cutoff = percent_cutoff
+
     def get_stock_data(self): 
         """
         Retrieve the stock data for ticker over the specified date range. 
@@ -55,7 +56,7 @@ class stock_data:
             #Market Closes    
             percent_change = percent_change_list[i]
             #Sell at break even. 
-            if percent_change < self.percent_cutoff and close_list[i] < avg_price and total_investable_amount >= total_investable_amount_og/num_chunks: 
+            if percent_change < self.percent_cutoff and close_list[i] < avg_price and total_investable_amount >= total_investable_amount_og/num_chunks and total_investable_amount>0: 
                 purchase_price = close_list[i]
                 num_purchased_today = dollar_chunks / purchase_price
                 total_investable_amount = total_investable_amount - dollar_chunks
@@ -71,8 +72,8 @@ class stock_data:
         buy_and_hold_increase = np.round(((close_list[-1] - initial_price)/initial_price)*100,2)
 
         #Summarize results. 
-        print('For ticker ' + str(self.ticker) + ' and duration = ' + str(self.num_days) + ' days:')
-        print('My strat. yields a ' + str(strategy_percent_increase) + ' % increase. ')
-        print('Buy and hold yields a ' + str(buy_and_hold_increase) + str(' % increase')) 
+        # print('For ticker ' + str(self.ticker) + ' and duration = ' + str(self.num_days) + ' days:')
+        # print('My strat. yields a ' + str(strategy_percent_increase) + ' % increase. ')
+        # print('Buy and hold yields a ' + str(buy_and_hold_increase) + str(' % increase')) 
 
         return [self.ticker,self.num_days,self.num_chunks,self.percent_cutoff,strategy_percent_increase,buy_and_hold_increase]

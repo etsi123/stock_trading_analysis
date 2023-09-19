@@ -5,14 +5,14 @@ import yfinance as yf
 import datetime
 from datetime import date, timedelta
 
-class stock_data:
+class StockEvaluations:
     def __init__(self,ticker,num_days,num_chunks,percent_cutoff): 
         self.ticker = ticker
         self.num_days = num_days
         self.num_chunks = num_chunks
         self.percent_cutoff = percent_cutoff
 
-    def get_stock_data(self): 
+    def getStockData(self): 
         """
         Retrieve the stock data for ticker over the specified date range. 
         """
@@ -27,19 +27,21 @@ class stock_data:
         data['percent_change'] = (data['Close']-data['Open'])/data['Close']*100    
         self.data = data
         return self.data
-    def simulate_avg_down_strategy(self): 
+    def simulateAvgDownStrat(self): 
         """
         Code to simulate my average down strategy. 
         """
         total_investable_amount_og = 10000 #Compute a basis amount, everything normalized by this number. 
-        total_investable_amount = total_investable_amount_og
-        num_chunks = self.num_chunks
-        dollar_chunks = total_investable_amount / num_chunks
-        total_investable_amount = total_investable_amount - dollar_chunks 
+        total_investable_amount = 10000
 
+        num_chunks = self.num_chunks
         percent_change_list = self.data.percent_change.tolist()
         close_list = self.data.Close.tolist()
         open_list = self.data.Open.tolist()
+
+
+        dollar_chunks = total_investable_amount / num_chunks
+        total_investable_amount = total_investable_amount - dollar_chunks 
 
         initial_price = close_list.pop(0)
         initial_num_stocks = dollar_chunks / initial_price

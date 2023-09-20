@@ -52,8 +52,8 @@ class StockEvaluations:
         
         for i in range(0,len(percent_change_list)): 
             #Market Opens
-            if avg_price >= open_list[i] and num_stocks > initial_num_stocks: 
-                total_investable_amount = total_investable_amount + (num_stocks - initial_num_stocks)*(avg_price)
+            if avg_price <= open_list[i] and num_stocks > initial_num_stocks: 
+                total_investable_amount = total_investable_amount + (num_stocks - initial_num_stocks)*(open_list[i])
                 num_stocks = initial_num_stocks
             #Market Closes    
             percent_change = percent_change_list[i]

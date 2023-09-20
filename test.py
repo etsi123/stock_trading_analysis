@@ -18,6 +18,6 @@ import os
 from ydata_profiling import ProfileReport
 import seaborn as sns
 
-stock = StockEvaluations(ticker='TSLA',num_days=600,num_chunks=2,percent_cutoff=-2)
+stock = StockEvaluations(ticker='TSLA',num_days=20,num_chunks=2,percent_cutoff=-2)
 stock.getStockData()
 results = stock.simulateAvgDownStrat()

@@ -1,4 +1,4 @@
-# stock_trading_analysis
+# Stock Trading Analysis
 
 **Disclaimer: The author of this code/analysis assumes for those who risk their money trying this strategy. There is inherent risk to participating in the stock market despite this technical analysis. As a general rule, one should only trade/invest with money that one can afford to lose.**
 
@@ -17,5 +17,5 @@ Risks:
 
 This strategy is based on the assumption that blue-chip stocks will not continuously decline without ever popping up. Generally speaking, stocks will drop but may also increase in value briefly as traders/investers attempt to "buy-the-dip". However, there is requirement guaranteeing this will happen: just what tends to happen to stocks in the market.
 
-A summary of this analysis can be found here. 
+A summary of this analysis can be found [here](https://medium.com/@evantsiklidis/evaluating-an-average-down-stock-trading-strategy-a510bc34e303).
 
